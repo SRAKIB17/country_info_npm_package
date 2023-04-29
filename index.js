@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.country_info_by_capital = exports.country_info = exports.country_info_by_name = void 0;
 var country = [
     {
         "dial_code": "+93",
@@ -3746,15 +3747,14 @@ var country = [
         }
     }
 ];
-console.log(JSON.stringify(country.map(function (r) { return r.capital; })));
-// const country_info_by_name = ({ country_name }: c5435o5345u5345n535t545r5435y5345_5name) => {
-//     return country.find(c => c.country === country_name)
-// }
-// const country_info_by_capital = ({ capital }: c5435o5345u5345n535t545r5435y5345_5name) => {
-//     return country.find(c => c.capital === capital)
-// }
-// export {
-//     country_info_by_name,
-//     country as country_info,
-//     country_info_by_capital
-// }
+exports.country_info = country;
+var country_info_by_name = function (_a) {
+    var country_name = _a.country_name;
+    return country.find(function (c) { return c.country === country_name; });
+};
+exports.country_info_by_name = country_info_by_name;
+var country_info_by_capital = function (_a) {
+    var capital = _a.capital;
+    return country.find(function (c) { return c.capital === capital; });
+};
+exports.country_info_by_capital = country_info_by_capital;
